@@ -1,0 +1,14 @@
+---
+import ContentProject from "./Content-Project.astro";
+import ImageProject from "./Image-Project.astro";
+---
+
+<div class="gap-3 grid md:grid-cols-2 mt-40 w-full">
+    <ContentProject />
+    <ImageProject />
+</div>
+
+<div class="gap-3 grid md:grid-cols-2 mt-40 w-full">
+    <ImageProject class="inverse" />
+    <ContentProject class="inverse" />
+</div>

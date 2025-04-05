@@ -1,0 +1,46 @@
+<div class="relative w-full content-image-project">
+    <div
+        class="z-[2] relative bg-[#2B0B3A] pt-6 pl-10 rounded-xl w-full max-w-xl overflow-hidden"
+    >
+        <img
+            class="block w-full max-w-full h-auto object-bottom-right object-cover overflow-hidden"
+            src="screen-1.png"
+            alt="screen-1.png"
+        />
+    </div>
+</div>
+
+<style>
+    .content-image-project::before {
+        position: absolute;
+        content: "";
+        border-radius: 50%;
+        width: 50%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        /* border: 1px solid #fff; */
+        scale: 2;
+        background: radial-gradient(
+            circle closest-side,
+            #763cac 0%,
+            #320f8500 100%
+        );
+    }
+    .content-image-project::after {
+        position: absolute;
+        content: "";
+        border-radius: 50%;
+        width: 50%;
+        height: 100%;
+        right: 0;
+        top: 0;
+        /* border: 1px solid #fff; */
+        scale: 2;
+        background: radial-gradient(
+            circle closest-side,
+            #763cac 0%,
+            #320f8500 100%
+        );
+    }
+</style>

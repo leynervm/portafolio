@@ -1,0 +1,119 @@
+---
+const { class: className, ...rest } = Astro.props;
+---
+
+<div class=`w-full ${className}`>
+    <span class="block text-[#9857D3] text-lg title"> Featured Project </span>
+    <h3 class="font-semibold text-[#CCD6F6] text-3xl description">
+        Example Project
+    </h3>
+
+    <div class="relative mt-14">
+        <div class="z-10 absolute w-[115%] content-project">
+            <div class="relative p-5 px-8 rounded-xl fondo-project">
+                <span class="rounded-xl fondo-blur"></span>
+                <p
+                    class="relative font-light text-[#CCD6F6] text-lg text-justify"
+                >
+                    A web app for visualizing personalized Spotify data. View
+                    your top artists, top tracks, recently played tracks, and
+                    detailed audio information about each track. Create and save
+                    new playlists of recommended tracks based on your existing
+                    playlists and more.
+                </p>
+            </div>
+
+            <div class="relative flex gap-3 mt-8 pl-8 w-full content-clicks">
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="31"
+                    height="31"
+                    viewBox="0 0 31 31"
+                    fill="none"
+                    stroke="white"
+                    stroke-width="4"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
+                    <path d="M15.5 2.58331V7.74998"></path>
+                    <path
+                        d="M14.2083 14.2083L27.125 16.7916L23.25 19.375L27.125 23.25L23.25 27.125L19.375 23.25L16.7917 27.125L14.2083 14.2083Z"
+                        fill="white"></path>
+                    <path
+                        d="M24.6334 6.36658L20.9799 10.0201M6.36663 24.6333L10.0201 20.9798M2.58334 15.5H7.75001M6.36663 6.36658L10.0201 10.0201"
+                    ></path>
+                </svg>
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="31"
+                    height="31"
+                    viewBox="0 0 31 31"
+                    fill="none"
+                    stroke="white"
+                    stroke-width="4"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
+                    <path d="M15.5 2.58331V7.74998"></path>
+                    <path
+                        d="M14.2083 14.2083L27.125 16.7916L23.25 19.375L27.125 23.25L23.25 27.125L19.375 23.25L16.7917 27.125L14.2083 14.2083Z"
+                        fill="white"></path>
+                    <path
+                        d="M24.6334 6.36658L20.9799 10.0201M6.36663 24.6333L10.0201 20.9798M2.58334 15.5H7.75001M6.36663 6.36658L10.0201 10.0201"
+                    ></path>
+                </svg>
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+    * {
+        font-family: "Poppins", sans-serif;
+    }
+    .fondo-project {
+        background-image: radial-gradient(
+                circle at -500%,
+                #693b93 0%,
+                #6ebef438 77%,
+                #468fd400 100%
+            ),
+            url("rectangle.png");
+        background-size: cover;
+        background-position: right;
+    }
+
+    .fondo-blur {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        backdrop-filter: blur(0.5rem);
+    }
+
+    .inverse .title,
+    .inverse .description {
+        text-align: right;
+    }
+
+    .inverse .content-project {
+        right: 0;
+    }
+
+    .inverse .fondo-project {
+        background-image: radial-gradient(
+                circle at -500%,
+                #763cac 0%,
+                #6ebff438 77%,
+                #4690d400 100%
+            ),
+            url("rectangle2.png");
+    }
+
+    .inverse .content-clicks {
+        justify-content: end;
+        padding-left: 0;
+        padding-right: 32px;
+    }
+</style>
