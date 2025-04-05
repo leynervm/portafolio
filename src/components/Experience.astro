@@ -7,20 +7,26 @@ const { class: className, ...rest } = Astro.props;
   class=`px-12 py-8 border border-[#2C1250] border-t-[#693B93] border-t-4 rounded-t-xl rounded-b-xl w-full card-experience ${className}`
 >
   <div class="flex gap-8 w-full">
-    <div class="relative w-28 sombra-imagen">
+    <div class="relative w-24 sombra-imagen">
       <img class="block w-full" src={img} alt="" />
       <span class="point-white point"></span>
       <span class="point-violet point"></span>
     </div>
     <div class="flex-1">
       <h3 class="font-medium text-4xl">{title}</h3>
-      <p class="max-w-[270px] text-[10px]">
+      <p class="mt-2 max-w-full text-[10px] text-justify">
         {description}
       </p>
 
-      <div class="mt-3">
-        <button class="px-8 py-2.5 border border-[#693B93] rounded-xl text-xs">
-          LEARN MORE
+      <p class="mt-4 max-w-full text-[10px] text-end">Jaén, Cajamarca, Perú</p>
+
+      <p class="max-w-full text-[10px] text-end">2021 - Actualidad</p>
+
+      <div class="flex justify-end mt-3">
+        <button
+          class="hover:bg-[#693B93] px-8 py-2.5 border border-[#693B93] rounded-xl text-xs tracking-wide transition-colors ease-out"
+        >
+          VER REFERENCIA
         </button>
       </div>
     </div>

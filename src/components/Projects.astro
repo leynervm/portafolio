@@ -4,11 +4,27 @@ import ImageProject from "./Image-Project.astro";
 ---
 
 <div class="gap-3 grid md:grid-cols-2 mt-40 w-full">
-    <ContentProject />
+    <ContentProject
+        company="Next Technologies E.I.R.L."
+        title="Sistema Web ERP"
+    >
+        Desarrollo de un sistema web propio que brinda soluciones
+        tecnológicas. El sistema integral incluye facturación electrónica,
+        ventas, tienda virtual, gestión de almacén, kardex, compras, flujo de
+        caja, reportes, etc.
+    </ContentProject>
     <ImageProject />
 </div>
 
 <div class="gap-3 grid md:grid-cols-2 mt-40 w-full">
-    <ImageProject class="inverse" />
-    <ContentProject class="inverse" />
+    <ImageProject class="inverse" align="start" />
+    <ContentProject
+        company="Next Technologies E.I.R.L."
+        title="Sistema Soporte Técnico"
+        class="inverse"
+    >
+        He desarrollado un sistema automatizado para facilitar la gestión de
+        incidencias y solicitudes de servicio por parte de nuestros clientes,
+        incluyendo facturación electrónica de los servicios.
+    </ContentProject>
 </div>

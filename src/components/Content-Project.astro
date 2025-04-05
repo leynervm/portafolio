@@ -1,11 +1,11 @@
 ---
-const { class: className, ...rest } = Astro.props;
+const { company, title, class: className, ...rest } = Astro.props;
 ---
 
 <div class=`w-full ${className}`>
-    <span class="block text-[#9857D3] text-lg title"> Featured Project </span>
+    <span class="block text-[#ca9df8] text-lg title">{company}</span>
     <h3 class="font-semibold text-[#CCD6F6] text-3xl description">
-        Example Project
+        {title}
     </h3>
 
     <div class="relative mt-14">
@@ -15,11 +15,7 @@ const { class: className, ...rest } = Astro.props;
                 <p
                     class="relative font-light text-[#CCD6F6] text-lg text-justify"
                 >
-                    A web app for visualizing personalized Spotify data. View
-                    your top artists, top tracks, recently played tracks, and
-                    detailed audio information about each track. Create and save
-                    new playlists of recommended tracks based on your existing
-                    playlists and more.
+                    <slot />
                 </p>
             </div>
 

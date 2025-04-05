@@ -1,7 +1,16 @@
 ---
-const { img } = Astro.props;
+// const { img } = Astro.props;
 ---
 
 <div class="size-10">
-    <img class="block w-full h-full object-scale-down" src=`${img}` alt="ICONO" />
+    <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        stroke="currentColor"
+        stroke-width="0.2"
+        class="block w-full h-full text-white"
+    >
+        <slot />
+    </svg>
 </div>

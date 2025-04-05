@@ -1,11 +1,23 @@
-<div class="relative w-full content-image-project">
+---
+const { align, class: className, ...rest } = Astro.props;
+---
+
+<div class=`relative w-full content-image-project ${className}`>
     <div
-        class="z-[2] relative bg-[#2B0B3A] pt-6 pl-10 rounded-xl w-full max-w-xl overflow-hidden"
+        class:list={[
+            "z-[2] relative bg-[#2B0B3A] pt-6 rounded-2xl w-full overflow-hidden",
+            { "pr-8": align === "start" },
+            { "pl-8": align !== "start" },
+        ]}
     >
         <img
-            class="block w-full max-w-full h-auto object-bottom-right object-cover overflow-hidden"
-            src="screen-1.png"
-            alt="screen-1.png"
+            class:list={[
+                "block w-full max-w-full h-auto object-bottom-right object-cover overflow-hidden",
+                { "rounded-tr-3xl": align === "start" },
+                { "rounded-tl-3xl": align !== "start" },
+            ]}
+            src={align === "start" ? "screen-02.png" : "screen-01.png"}
+            alt="Imágen referencial"
         />
     </div>
 </div>
