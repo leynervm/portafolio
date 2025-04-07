@@ -2,34 +2,39 @@
 const { company, title, class: className, ...rest } = Astro.props;
 ---
 
-<div class=`w-full ${className}`>
+<div class=`w-full px-3 md:px-0 ${className}`>
     <span class="block text-[#ca9df8] text-lg title">{company}</span>
-    <h3 class="font-semibold text-[#CCD6F6] text-3xl description">
+    <h3 class="font-semibold text-[#CCD6F6] text-sm md:text-3xl description">
         {title}
     </h3>
 
-    <div class="relative mt-14">
-        <div class="z-10 absolute w-[115%] content-project">
-            <div class="relative p-5 px-8 rounded-xl fondo-project">
+    <div class="relative mt-5 md:mt-14">
+        <div
+            class="z-10 md:absolute relative w-[95%] md:w-[115%] content-project"
+        >
+            <div
+                class="relative p-3 md:p-5 px-5 md:px-8 rounded-xl fondo-project"
+            >
                 <span class="rounded-xl fondo-blur"></span>
                 <p
-                    class="relative font-light text-[#CCD6F6] text-lg text-justify"
+                    class="relative font-light text-[#CCD6F6] text-xs md:text-lg text-justify"
                 >
                     <slot />
                 </p>
             </div>
 
-            <div class="relative flex gap-3 mt-8 pl-8 w-full content-clicks">
+            <div
+                class="relative flex gap-3 mt-3 md:mt-8 md:pl-8 w-full content-clicks"
+            >
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    width="31"
-                    height="31"
                     viewBox="0 0 31 31"
                     fill="none"
                     stroke="white"
                     stroke-width="4"
                     stroke-linecap="round"
                     stroke-linejoin="round"
+                    class="block size-5 md:size-8"
                 >
                     <path d="M15.5 2.58331V7.74998"></path>
                     <path
@@ -41,14 +46,13 @@ const { company, title, class: className, ...rest } = Astro.props;
                 </svg>
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    width="31"
-                    height="31"
                     viewBox="0 0 31 31"
                     fill="none"
                     stroke="white"
                     stroke-width="4"
                     stroke-linecap="round"
                     stroke-linejoin="round"
+                    class="block size-5 md:size-8"
                 >
                     <path d="M15.5 2.58331V7.74998"></path>
                     <path
@@ -73,7 +77,7 @@ const { company, title, class: className, ...rest } = Astro.props;
                 #6ebef438 77%,
                 #468fd400 100%
             ),
-            url("rectangle.png");
+            url("rectangle2.png");
         background-size: cover;
         background-position: right;
     }
@@ -88,28 +92,39 @@ const { company, title, class: className, ...rest } = Astro.props;
         backdrop-filter: blur(0.5rem);
     }
 
-    .inverse .title,
-    .inverse .description {
-        text-align: right;
-    }
+    @media (width >= 48rem) {
+        .fondo-project {
+            background-image: radial-gradient(
+                    circle at -500%,
+                    #693b93 0%,
+                    #6ebef438 77%,
+                    #468fd400 100%
+                ),
+                url("rectangle.png");
+        }
 
-    .inverse .content-project {
-        right: 0;
-    }
+        .inverse .title,
+        .inverse .description {
+            text-align: right;
+        }
 
-    .inverse .fondo-project {
-        background-image: radial-gradient(
-                circle at -500%,
-                #763cac 0%,
-                #6ebff438 77%,
-                #4690d400 100%
-            ),
-            url("rectangle2.png");
-    }
+        .inverse .content-project {
+            right: 0;
+        }
+        .inverse .fondo-project {
+            background-image: radial-gradient(
+                    circle at -500%,
+                    #763cac 0%,
+                    #6ebff438 77%,
+                    #4690d400 100%
+                ),
+                url("rectangle2.png");
+        }
 
-    .inverse .content-clicks {
-        justify-content: end;
-        padding-left: 0;
-        padding-right: 32px;
+        .inverse .content-clicks {
+            justify-content: end;
+            padding-left: 0;
+            padding-right: 32px;
+        }
     }
 </style>

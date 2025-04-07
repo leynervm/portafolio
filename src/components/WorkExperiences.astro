@@ -3,11 +3,11 @@ import Experience from "./Experience.astro";
 import IconExperience from "./IconExperience.astro";
 ---
 
-<div class="w-full">
-  <div class="relative pt-20 content-experiences">
-    <h1 class="pb-16 text-4xl">Experiencia laboral</h1>
+<div class="px-3 md:px-0 w-full">
+  <div class="relative pt-5 md:pt-20 content-experiences">
+    <h1 class="text-xl md:text-4xl">Experiencia laboral</h1>
 
-    <div class="gap-6 grid md:grid-cols-2">
+    <div class="gap-6 grid lg:grid-cols-2 py-10 md:py-24">
       <Experience
         class="gradiente-bottom-right"
         title="Next Technologies"
@@ -43,7 +43,7 @@ import IconExperience from "./IconExperience.astro";
     </div>
   </div>
 
-  <p class="pt-24 text-lg text-center">
+  <p class="text-sm md:text-lg text-center leading-tight">
     Actualmente busco unirme a un equipo <span class="text-[#ca9df8]"
       >multifuncional</span
     > que valore
@@ -55,7 +55,7 @@ import IconExperience from "./IconExperience.astro";
   </p>
 
   <div
-    class="flex flex-wrap justify-center gap-5 mx-auto mt-8 w-full max-w-2xl"
+    class="flex flex-wrap justify-center gap-3 sm:gap-4 md:gap-5 mx-auto mt-8 w-full max-w-2xl"
   >
     <!-- PHP -->
     <IconExperience>
@@ -186,9 +186,9 @@ import IconExperience from "./IconExperience.astro";
     </IconExperience>
   </div>
 
-  <div class="relative mt-48 w-full">
-    <div class="relative mx-auto p-5 pb-20 max-w-4xl ellipses">
-      <div class="relative mx-auto size-40 circle">
+  <div class="relative pt-12 md:pt-48 w-full">
+    <div class="relative mx-auto p-5 pb-10 md:pb-20 max-w-4xl ellipses">
+      <div class="relative mx-auto size-16 sm:size-24 md:size-40 circle">
         <span class="gradiente-circle"></span>
       </div>
 
@@ -394,7 +394,12 @@ import IconExperience from "./IconExperience.astro";
 <style>
   .content-experiences {
     background: #11071f;
-    background: radial-gradient(ellipse 270px 275px, #763cac, #320f8500);
+    background: radial-gradient(
+      ellipse closest-side at 50% 50%,
+      #763cac,
+      #320f8500
+    );
+    /* background: radial-gradient(ellipse 270px 275px, #763cac, #320f8500); */
   }
 
   .circle {
@@ -423,7 +428,12 @@ import IconExperience from "./IconExperience.astro";
     left: 50%;
     transform: translateX(-50%);
     background: #fff;
-    background: radial-gradient(ellipse 250px 130px, #763cac, #320f8500);
+    background: radial-gradient(
+      ellipse closest-side at 50% 50%,
+      #763cac,
+      #320f8500
+    );
+    /* background: radial-gradient(ellipse 250px 130px, #763cac, #320f8500); */
   }
 
   .circle::after {
@@ -460,10 +470,15 @@ import IconExperience from "./IconExperience.astro";
     border-left: 1px solid #763cac;
     border-right: 1px solid #763cac;
     background: linear-gradient(
+      ellipse closest-side at 50% 50%,
+      #00000000 20%,
+      #763cac 100%
+    );
+    /* background: linear-gradient(
       to center,
       rgba(0, 0, 0, 0) 20%,
       rgb(118, 60, 172) 100%
-    );
+    ); */
   }
 
   .ellipses::before {
@@ -502,10 +517,22 @@ import IconExperience from "./IconExperience.astro";
     display: block;
     position: absolute;
     color: #693b93;
-    width: 20px;
+    width: 14px;
     max-height: 20px;
     height: auto;
     /* height: 20px; */
+  }
+
+  @media (width >= 40rem) {
+    .icon-ellipse {
+      width: 16px;
+    }
+  }
+
+  @media (width >= 48rem) {
+    .icon-ellipse {
+      width: 20px;
+    }
   }
 
   .icon-code {
@@ -526,7 +553,13 @@ import IconExperience from "./IconExperience.astro";
   .icon-node {
     top: 50%;
     transform: translateY(-50%);
-    left: 100%;
+    right: 0;
+  }
+
+  @media (width >= 64rem) {
+    .icon-node {
+      left: 100%;
+    }
   }
 
   .icon-npm {

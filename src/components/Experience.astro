@@ -4,16 +4,16 @@ const { class: className, ...rest } = Astro.props;
 ---
 
 <div
-  class=`px-12 py-8 border border-[#2C1250] border-t-[#693B93] border-t-4 rounded-t-xl rounded-b-xl w-full card-experience ${className}`
+  class=`px-4 sm:px-12 py-3 sm:py-8 lg:px-4 lg:py-3 xl:px-12 xl:py-8 border border-[#2C1250] border-t-[#693B93] border-t-4 rounded-t-xl rounded-b-xl w-full card-experience ${className}`
 >
-  <div class="flex gap-8 w-full">
-    <div class="relative w-24 sombra-imagen">
-      <img class="block w-full" src={img} alt="" />
+  <div class="flex gap-5 md:gap-8 w-full">
+    <div class="relative flex justify-center items-center pb-5 w-16 sm:w-24 sombra-imagen">
+      <img class="block mt-auto" src={img} alt="" />
       <span class="point-white point"></span>
       <span class="point-violet point"></span>
     </div>
     <div class="flex-1">
-      <h3 class="font-medium text-4xl">{title}</h3>
+      <h3 class="font-medium text-xl md:text-4xl">{title}</h3>
       <p class="mt-2 max-w-full text-[10px] text-justify">
         {description}
       </p>
@@ -24,7 +24,7 @@ const { class: className, ...rest } = Astro.props;
 
       <div class="flex justify-end mt-3">
         <button
-          class="hover:bg-[#693B93] px-8 py-2.5 border border-[#693B93] rounded-xl text-xs tracking-wide transition-colors ease-out"
+          class="hover:bg-[#693B93] px-3 md:px-8 py-2.5 border border-[#693B93] rounded-xl text-xs tracking-wide transition-colors ease-out"
         >
           VER REFERENCIA
         </button>
@@ -80,7 +80,7 @@ const { class: className, ...rest } = Astro.props;
     content: "";
     width: 100%;
     height: 40px;
-    bottom: 0;
+    bottom: 0px;
     border-radius: 50%;
     background: #11071f;
     transform: rotate(-8deg);

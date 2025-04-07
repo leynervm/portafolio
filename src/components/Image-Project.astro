@@ -5,16 +5,16 @@ const { align, class: className, ...rest } = Astro.props;
 <div class=`relative w-full content-image-project ${className}`>
     <div
         class:list={[
-            "z-[2] relative bg-[#2B0B3A] pt-6 rounded-2xl w-full overflow-hidden",
-            { "pr-8": align === "start" },
-            { "pl-8": align !== "start" },
+            "z-[2] relative bg-[#2B0B3A] pt-4 md:pt-6 rounded-2xl w-full overflow-hidden",
+            { "px-3 md:pr-8": align === "start" },
+            { "px-3 md:pl-8": align !== "start" },
         ]}
     >
         <img
             class:list={[
-                "block w-full max-w-full h-auto object-bottom-right object-cover overflow-hidden",
-                { "rounded-tr-3xl": align === "start" },
-                { "rounded-tl-3xl": align !== "start" },
+                "block w-full max-w-full h-auto object-scale-down md:object-bottom-right md:object-cover",
+                { "md:rounded-tr-3xl": align === "start" },
+                { "md:rounded-tl-3xl": align !== "start" },
             ]}
             src={align === "start" ? "screen-02.png" : "screen-01.png"}
             alt="Imágen referencial"
@@ -23,36 +23,44 @@ const { align, class: className, ...rest } = Astro.props;
 </div>
 
 <style>
-    .content-image-project::before {
-        position: absolute;
-        content: "";
-        border-radius: 50%;
-        width: 50%;
-        height: 100%;
-        top: 0;
-        left: 0;
-        /* border: 1px solid #fff; */
-        scale: 2;
-        background: radial-gradient(
-            circle closest-side,
-            #763cac 0%,
-            #320f8500 100%
-        );
+    @media (width >= 64rem) {
+        .content-image-project::before {
+            position: absolute;
+            content: "";
+            border-radius: 50%;
+            width: 50%;
+            max-width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            /* border: 1px solid #fff; */
+            background: radial-gradient(
+                circle closest-side,
+                #763cac 0%,
+                #320f8500 100%
+            );
+        }
+        .content-image-project::after {
+            position: absolute;
+            content: "";
+            border-radius: 50%;
+            width: 50%;
+            max-width: 100%;
+            height: 100%;
+            right: 0;
+            top: 0;
+            /* border: 1px solid #fff; */
+            background: radial-gradient(
+                circle closest-side,
+                #763cac 0%,
+                #320f8500 100%
+            );
+        }
     }
-    .content-image-project::after {
-        position: absolute;
-        content: "";
-        border-radius: 50%;
-        width: 50%;
-        height: 100%;
-        right: 0;
-        top: 0;
-        /* border: 1px solid #fff; */
-        scale: 2;
-        background: radial-gradient(
-            circle closest-side,
-            #763cac 0%,
-            #320f8500 100%
-        );
+    @media (width >= 96rem) {
+        .content-image-project::before,
+        .content-image-project::after {
+            scale: 2;
+        }
     }
 </style>
